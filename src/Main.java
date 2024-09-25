@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Cliente cliente = new Cliente();
@@ -11,5 +14,14 @@ public class Main {
 
         cc.imprimirExtrato();
         cp.imprimirExtrato();
+
+        List<Conta> contaList = new ArrayList<>();
+        contaList.add(cc);
+        contaList.add(cp);
+
+        Banco banco = new Banco();
+        banco.setNome("Santander");
+        banco.setContas(contaList);
+        banco.imprimirContas();
     }
 }
